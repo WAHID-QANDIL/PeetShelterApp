@@ -1,4 +1,4 @@
-package org.wahid.github.peet_shelter_app.presentation.splash
+package org.wahid.github.peet_shelter_app.presentation.screens.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import org.wahid.github.peet_shelter_app.presentation.splash.components.CustomSplashButton
+import org.wahid.github.peet_shelter_app.presentation.screens.splash.components.CustomSplashButton
 import org.wahid.github.peet_shelter_app.theme.Colors
 import org.wahid.github.peet_shelter_app.theme.MEDIUM_PADDING
 import org.wahid.github.peet_shelter_app.theme.SPLASH_ICON_BOX_HEIGHT
