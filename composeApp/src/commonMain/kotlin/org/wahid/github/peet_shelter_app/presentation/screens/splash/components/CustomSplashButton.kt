@@ -1,4 +1,4 @@
-package org.wahid.github.peet_shelter_app.presentation.splash.components
+package org.wahid.github.peet_shelter_app.presentation.screens.splash.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,7 +17,6 @@ import org.wahid.github.peet_shelter_app.theme.LARGE_ROUNDED_CORNER_SIZE
 
 @Composable
 fun CustomSplashButton(
-    modifier: Modifier = Modifier,
     text: String,
     textColor: Color,
     backgroundColor: Color,
