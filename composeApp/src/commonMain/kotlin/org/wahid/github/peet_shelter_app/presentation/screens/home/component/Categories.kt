@@ -1,14 +1,8 @@
 package org.wahid.github.peet_shelter_app.presentation.screens.home.component
 
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.AnimationSpec
-import androidx.compose.animation.core.EaseIn
-import androidx.compose.animation.core.EaseInBack
-import androidx.compose.animation.core.EaseInCirc
-import androidx.compose.animation.core.EaseInElastic
 import androidx.compose.animation.core.EaseInOutBack
 import androidx.compose.animation.core.EaseOut
-import androidx.compose.animation.core.Easing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,7 +10,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
@@ -89,11 +82,13 @@ fun CategoryItem(
     )
 
     Surface(
-        modifier = Modifier.border(
-            color = Color.LightGray,
-            width = if (isSelected) 0.dp else 2.dp,
-            shape = CircleShape
-        ).clickable { onItemClick() }
+        modifier = Modifier
+            .border(
+                color = Color.LightGray,
+                width = if (isSelected) 0.dp else 2.dp,
+                shape = CircleShape
+            )
+            .clickable { onItemClick() }
     ) {
         Row(
             modifier = modifier.background(

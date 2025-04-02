@@ -19,9 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.navigation.NavHostController
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.wahid.github.peet_shelter_app.navigation.Screen
 import org.wahid.github.peet_shelter_app.presentation.screens.splash.components.CustomSplashButton
 import org.wahid.github.peet_shelter_app.theme.Colors
 import org.wahid.github.peet_shelter_app.theme.MEDIUM_PADDING
@@ -35,7 +37,9 @@ import peetshelterapp.composeapp.generated.resources.logo
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 @Preview
-fun SplashScreen() {
+fun SplashScreen(
+    navHostController: NavHostController
+) {
 
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -80,7 +84,10 @@ fun SplashScreen() {
                 text = Strings.buttonText,
                 textColor = Color.White,
                 backgroundColor = Colors.pinkColor,
-                onClick = {}
+                onClick = {
+                    navHostController.popBackStack()
+                    navHostController.navigate(Screen.Home())
+                }
 
             )
 
