@@ -6,6 +6,4 @@ plugins {
     alias(libs.plugins.composeMultiplatform) apply false
     alias(libs.plugins.composeCompiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
-    kotlin("jvm") version "2.1.20" apply false
-    kotlin("plugin.serialization") version "2.1.20"
 }

@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    kotlin("plugin.serialization") version "2.1.20" apply true
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -33,6 +33,8 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.ktor.client.android)
+            implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -45,17 +47,31 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.navigation.compose)
             implementation(libs.kotlinx.serialization.json)
+            //Koin DI
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.koin.compose.viewmodel.navigation)
             implementation(libs.koin.core)
+
+            //Ktor
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+
+            //kamel
+            implementation(libs.kamel)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 
 
-    sourceSets.named("commonMain").configure {
-        kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
-    }
+//    sourceSets.named("commonMain").configure {
+//        kotlin.srcDir("build/generated/ksp/metadata/commonMain/kotlin")
+//    }
 }
 
 android {
@@ -88,4 +104,3 @@ android {
 dependencies {
     debugImplementation(compose.uiTooling)
 }
-
