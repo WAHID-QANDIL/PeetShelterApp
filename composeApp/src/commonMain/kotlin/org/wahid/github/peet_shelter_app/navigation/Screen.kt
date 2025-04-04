@@ -9,5 +9,5 @@ sealed class Screen {
     @Serializable
     class Home : Screen()
     @Serializable
-    data class Details(val animal: AnimalDataModel) : Screen()
+    data class Details(val animalId: Int) : Screen()
 }

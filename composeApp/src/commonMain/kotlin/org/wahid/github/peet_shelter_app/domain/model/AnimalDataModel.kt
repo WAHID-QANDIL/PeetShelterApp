@@ -1,29 +1,29 @@
 package org.wahid.github.peet_shelter_app.domain.model
 
-import androidx.core.bundle.Bundle
-import androidx.navigation.NavType
+
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
 
 @Serializable
 data class AnimalDataModel(
-    val name: String,
+    @SerialName("breed_group")
+    val breedGroup: String?,
+    @SerialName("colors")
+    val colors: List<String?>?,
+    @SerialName("description")
+    val description: String?,
+    @SerialName("id")
+    val id: Int?,
+    @SerialName("image")
+    val image: String?,
+    @SerialName("lifespan")
+    val lifespan: String?,
+    @SerialName("name")
+    val name: String?,
+    @SerialName("origin")
+    val origin: String?,
+    @SerialName("size")
+    val size: String?,
+    @SerialName("temperament")
+    val temperament: String?
 )
-
-object AnimalDataModelNavType : NavType<AnimalDataModel>(isNullableAllowed = false) {
-    override fun serializeAsValue(value: AnimalDataModel): String {
-        return Json.encodeToString(value = value)
-    }
-
-    override fun get(bundle: Bundle, key: String): AnimalDataModel? {
-        return parseValue(bundle.getString(key)!!)
-    }
-
-    override fun parseValue(value: String): AnimalDataModel {
-        return Json.decodeFromString(value)
-    }
-
-    override fun put(bundle: Bundle, key: String, value: AnimalDataModel) {
-        bundle.putString(key, serializeAsValue(value))
-    }
-}

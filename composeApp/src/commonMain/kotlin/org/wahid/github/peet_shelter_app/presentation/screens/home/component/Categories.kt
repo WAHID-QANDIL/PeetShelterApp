@@ -10,6 +10,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
@@ -30,8 +31,7 @@ import org.jetbrains.compose.resources.painterResource
 import org.wahid.github.peet_shelter_app.domain.model.CategoryItem
 import org.wahid.github.peet_shelter_app.theme.Colors
 import org.wahid.github.peet_shelter_app.theme.Strings
-import org.wahid.github.peet_shelter_app.utils.Constants.ROUNDED100_CORNER_SHAPE
-
+import org.wahid.github.peet_shelter_app.theme.Shapes.ROUNDED100_CORNER_SHAPE
 @Composable
 fun Categories(
     modifier: Modifier = Modifier,
@@ -47,10 +47,13 @@ fun Categories(
     ) {
         itemsIndexed(categories) { index, item ->
             CategoryItem(
+                modifier = Modifier.fillMaxWidth(),
                 icon = painterResource(item.image),
                 text = item.name,
                 isSelected = index == selectedItem,
-                onItemClick = { onItemClick(index) }
+                onItemClick = { onItemClick(index) },
+                selectedColor = Colors.pinkColor,
+                unSelectedColor = Color.White
             )
         }
 
@@ -66,10 +69,12 @@ fun CategoryItem(
     text: String,
     isSelected: Boolean = false,
     onItemClick: () -> Unit,
+    selectedColor: Color,
+    unSelectedColor: Color,
 ) {
 
     val backgroundColor = animateColorAsState(
-        targetValue = Colors.pinkColor,
+        targetValue = selectedColor ,
         animationSpec = tween(
             easing = EaseOut,
         )
@@ -92,7 +97,7 @@ fun CategoryItem(
     ) {
         Row(
             modifier = modifier.background(
-                color = if (isSelected) backgroundColor.value else Color.White,
+                color = if (isSelected) backgroundColor.value else unSelectedColor,
                 shape = ROUNDED100_CORNER_SHAPE
             ).padding(
                 all = 12.dp

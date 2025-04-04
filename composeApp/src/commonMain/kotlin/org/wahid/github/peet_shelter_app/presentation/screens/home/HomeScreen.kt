@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import org.wahid.github.peet_shelter_app.domain.model.CategoryItem
 import org.wahid.github.peet_shelter_app.presentation.screens.home.component.Categories
 import org.wahid.github.peet_shelter_app.presentation.screens.home.component.HomeTopBar
-import org.wahid.github.peet_shelter_app.theme.HOME_SCREEN_PADDING
+import org.wahid.github.peet_shelter_app.utils.Constants.HOME_SCREEN_PADDING
 import peetshelterapp.composeapp.generated.resources.Res
 import peetshelterapp.composeapp.generated.resources.cat1
 import peetshelterapp.composeapp.generated.resources.cat2

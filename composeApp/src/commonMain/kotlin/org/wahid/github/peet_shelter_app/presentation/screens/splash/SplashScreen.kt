@@ -18,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
 import org.jetbrains.compose.resources.ExperimentalResourceApi
@@ -46,7 +47,8 @@ fun SplashScreen(
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(Res.drawable.app_background),
-            contentDescription = Strings.splashBackground
+            contentDescription = Strings.splashBackground,
+            contentScale = ContentScale.FillBounds
         )
 
         Box(

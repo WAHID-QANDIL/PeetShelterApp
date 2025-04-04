@@ -5,5 +5,6 @@ import androidx.compose.ui.unit.dp
 
 object Constants {
 
-    val ROUNDED100_CORNER_SHAPE = RoundedCornerShape(100.dp)
+    val HOME_SCREEN_PADDING = 16.dp
+    val BASE_URL = ""
 }
