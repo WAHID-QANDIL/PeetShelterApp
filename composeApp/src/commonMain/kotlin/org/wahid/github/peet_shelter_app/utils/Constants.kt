@@ -6,5 +6,5 @@ import androidx.compose.ui.unit.dp
 object Constants {
 
     val HOME_SCREEN_PADDING = 16.dp
-    val BASE_URL = ""
+    const val BASE_URL = "https://freetestapi.com/api/v1/"
 }

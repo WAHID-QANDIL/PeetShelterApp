@@ -37,7 +37,6 @@ import peetshelterapp.composeapp.generated.resources.logo
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
-@Preview
 fun SplashScreen(
     navHostController: NavHostController
 ) {

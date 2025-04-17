@@ -1,7 +1,6 @@
 package org.wahid.github.peet_shelter_app.navigation
 
 import kotlinx.serialization.Serializable
-import org.wahid.github.peet_shelter_app.domain.model.AnimalDataModel
 
 sealed class Screen {
     @Serializable

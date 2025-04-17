@@ -4,6 +4,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.material.AppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -15,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import org.wahid.github.peet_shelter_app.domain.model.CategoryItem
 import org.wahid.github.peet_shelter_app.presentation.screens.home.component.Categories
 import org.wahid.github.peet_shelter_app.presentation.screens.home.component.HomeTopBar
+import org.wahid.github.peet_shelter_app.presentation.screens.home.component.body_section.PeetItemCard
 import org.wahid.github.peet_shelter_app.utils.Constants.HOME_SCREEN_PADDING
 import peetshelterapp.composeapp.generated.resources.Res
 import peetshelterapp.composeapp.generated.resources.cat1
@@ -52,6 +56,25 @@ fun HomeScreen(
             categories = category,
             onItemClick = {selectedItem = it}
         )
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+        ) {
+            items(10) { index ->
+                PeetItemCard(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(AppBarDefaults.ContentPadding),
+                    image = Res.drawable.cat1,
+                    petName = "Cat $index",
+                    petDescription = "This is a cat",
+                    petAge = "2 years",
+                    onStarClicked = {},
+                    onItemClick = {}
+                )
+
+            }
+        }
+
 
     }
 
